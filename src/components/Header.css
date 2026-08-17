@@ -1,0 +1,391 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--beige);
+  color: var(--ink);
+}
+
+.header__top {
+  height: var(--header-h-scrolled);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ── Left: menu + search ─────────────────────────── */
+
+.header__left {
+  display: flex;
+  align-items: center;
+  justify-self: start;
+}
+
+.header__hamburger {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0;
+  color: inherit;
+}
+
+.header__hamburger:focus-visible,
+.header__search:focus-visible,
+.global-nav__close:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+.header__hamburger-label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.icon--burger {
+  width: 1.75rem;
+}
+
+.icon--burger-thick {
+  display: none;
+}
+
+.header__hamburger:hover .icon--burger-thick {
+  display: block;
+}
+
+.header__hamburger:hover .icon--burger {
+  display: none;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: 1.75rem;
+  color: inherit;
+}
+
+.icon--search {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Header form bar ─────────────────────────────── */
+
+.header__top .explore-bar__fields {
+  justify-self: center;
+}
+
+.header__top .explore-bar__field:first-child {
+  margin-right: 1.25rem;
+}
+
+.header__top .explore-bar__field {
+  gap: 0.3rem;
+}
+
+.header__top .explore-bar__select {
+  font-size: 1rem;
+  padding-right: 1.5rem;
+}
+
+.header__top .explore-bar__btn {
+  justify-self: end;
+  align-self: end;
+  height: 2.75rem;
+  min-width: 10.5rem;
+  padding: 0 2rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Brand row (under the form, scrolls away) ──────── */
+
+.header__brand-row {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(20, 20, 20, 0.1);
+  background: var(--beige);
+  color: var(--ink);
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Global navigation ───────────────────────────── */
+
+.global-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.global-nav--open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.global-nav__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity var(--duration-med) var(--ease-out);
+}
+
+.global-nav--open .global-nav__backdrop {
+  opacity: 1;
+}
+
+.global-nav__panel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform var(--duration-med) var(--ease-out);
+}
+
+.global-nav--open .global-nav__panel {
+  transform: translateX(0);
+}
+
+.global-nav__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--header-h);
+  padding: 0 var(--space-6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.global-nav__close {
+  position: absolute;
+  left: var(--space-6);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  color: inherit;
+}
+
+.global-nav__close svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.global-nav__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.global-nav__body {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  display: flex;
+  min-height: 0;
+}
+
+.global-nav__nav {
+  flex: 1;
+  padding: var(--space-8) clamp(1.5rem, 4vw, 3rem);
+  overflow-y: auto;
+}
+
+.global-nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.global-nav__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem 0;
+  opacity: 0.85;
+  transition: opacity var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.global-nav__link:hover {
+  opacity: 1;
+}
+
+.global-nav__link--active .global-nav__link-label {
+  color: var(--terracotta);
+}
+
+.global-nav__link-label {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3.2vw, 1.95rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.global-nav__link-sub {
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.global-nav__featured {
+  display: none;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 1000px) {
+  .header__top .explore-bar__fields,
+  .header__top .explore-bar__btn {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header__hamburger-label {
+    display: none;
+  }
+
+  .header__search {
+    margin-left: 1.5rem;
+  }
+
+  .global-nav__featured {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__brand {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+  }
+
+  .header__search {
+    margin-left: 1.25rem;
+  }
+
+  .header__top {
+    gap: var(--space-2);
+  }
+}
+
+@media (min-width: 1101px) {
+  .global-nav__panel {
+    animation: none;
+  }
+
+  .global-nav__head {
+    justify-content: flex-start;
+    padding: 0 0 0 calc(var(--space-6) * 1.5);
+    border-bottom: none;
+  }
+
+  .global-nav__close {
+    left: auto;
+    right: var(--space-8);
+  }
+
+  .global-nav__logo {
+    margin-left: 4.5rem;
+  }
+
+  .global-nav__body {
+    align-items: stretch;
+  }
+
+  .global-nav__nav {
+    flex: 1;
+    max-width: 420px;
+    padding: var(--space-8) clamp(1.5rem, 4vw, 3rem) var(--space-14);
+  }
+
+  .global-nav__link {
+    padding: 1.35rem 0;
+  }
+
+  .global-nav__featured {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    width: 46%;
+    background: var(--paper);
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    padding: var(--space-10) clamp(2rem, 5vw, 4rem) var(--space-10);
+    overflow-y: auto;
+  }
+
+  .global-nav__featured-label {
+    color: var(--terracotta);
+  }
+
+  .global-nav__featured-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .global-nav__featured-media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .global-nav__featured-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .global-nav__featured-title {
+    font-family: var(--font-serif);
+    font-size: var(--fs-title);
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 24ch;
+  }
+
+  .global-nav__quick {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-top: var(--space-6);
+  }
+
+  .global-nav__quick-btn {
+    font-family: var(--font-sans);
+    font-size: var(--fs-micro);
+    font-weight: 400;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    color: var(--grey);
+    border-bottom: 1px solid transparent;
+    transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .global-nav__quick-btn:hover {
+    color: var(--ink);
+    border-bottom-color: currentColor;
+  }
+}

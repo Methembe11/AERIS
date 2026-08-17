@@ -1,0 +1,130 @@
+.aircraft-hero {
+  height: min(58vh, 560px);
+}
+
+.aircraft-specs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.aircraft-spec {
+  padding: var(--space-6) var(--space-4);
+  border-right: 1px solid rgba(20, 20, 20, 0.1);
+}
+
+.aircraft-spec:last-child {
+  border-right: none;
+}
+
+.aircraft-spec__label {
+  color: var(--grey);
+}
+
+.aircraft-spec__value {
+  display: block;
+  margin-top: var(--space-3);
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.aircraft-sections {
+  margin-top: var(--space-14);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-14) var(--space-10);
+}
+
+.aircraft-section__label {
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.aircraft-section__text {
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.aircraft-operator-list {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.aircraft-operator {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+  transition: padding var(--duration-fast) var(--ease-out);
+}
+
+.aircraft-operator:hover {
+  padding-left: var(--space-2);
+}
+
+.aircraft-operator__name {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.aircraft-operator:hover .aircraft-operator__name {
+  color: var(--terracotta);
+}
+
+.aircraft-operator__meta {
+  color: var(--grey);
+}
+
+.aircraft-airport-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.aircraft-airport {
+  border: 1px solid rgba(20, 20, 20, 0.25);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.aircraft-airport:hover {
+  border-color: var(--terracotta);
+}
+
+.aircraft-airport__code {
+  color: var(--terracotta);
+}
+
+.aircraft-airport__city {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.aircraft-latest {
+  margin-top: var(--space-14);
+}
+
+@media (max-width: 900px) {
+  .aircraft-specs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .aircraft-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .aircraft-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

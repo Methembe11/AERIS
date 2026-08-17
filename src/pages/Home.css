@@ -1,0 +1,389 @@
+/* ── HERO ─────────────────────────────────────────── */
+
+.home-hero {
+  position: relative;
+  color: var(--ink);
+}
+
+.home-hero__videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  padding-bottom: var(--space-14);
+}
+
+.home-hero__frame {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+}
+
+.home-hero__frame--landscape {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.home-hero__frame--media {
+  aspect-ratio: 4 / 3;
+  max-width: 480px;
+  justify-self: center;
+  width: 100%;
+}
+
+.home-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.35) 0%,
+    rgba(20, 20, 20, 0.15) 45%,
+    rgba(20, 20, 20, 0.6) 100%
+  );
+}
+
+.home-hero__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: var(--space-8) clamp(1.25rem, 4vw, 3rem);
+}
+
+.home-hero__eyebrow {
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: var(--space-6);
+}
+
+.home-hero__title {
+  font-size: clamp(2.75rem, 8vw, 6.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.home-hero__sub {
+  margin: var(--space-8) auto 0;
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  max-width: 44ch;
+  color: var(--beige);
+}
+
+.home-hero__video,
+.home-hero__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .home-hero__videos {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* ── LEDGER AT A GLANCE ──────────────────────────── */
+
+.section-label {
+  justify-content: center;
+}
+
+.glance__intro {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  line-height: 1.35;
+  margin-bottom: var(--space-10);
+  text-align: center;
+}
+
+.glance__hint {
+  display: block;
+  margin-top: var(--space-3);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.glance__stats {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.stat {
+  padding: var(--space-8) var(--space-10);
+  text-align: center;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.stat:not(:last-child) {
+  border-right: 1px solid rgba(20, 20, 20, 0.1);
+}
+
+.stat__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.stat__label {
+  display: block;
+  margin-top: var(--space-4);
+  color: var(--grey);
+}
+
+.stat:hover .stat__label {
+  color: var(--terracotta);
+}
+
+/* ── FEATURED STORY ──────────────────────────────── */
+
+.home-featured__link {
+  display: block;
+  position: relative;
+  color: var(--white);
+}
+
+.home-featured__media img {
+  width: 100%;
+  height: min(85vh, 900px);
+  object-fit: cover;
+  display: block;
+}
+
+.home-featured__media {
+  position: relative;
+}
+
+.home-featured__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.15) 0%, rgba(20, 20, 20, 0.85) 100%);
+}
+
+.home-featured__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: var(--space-14);
+}
+
+.home-featured__eyebrow {
+  color: var(--terracotta);
+  white-space: nowrap;
+}
+
+.home-featured__title {
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  line-height: 1.08;
+  margin-top: var(--space-4);
+}
+
+.home-featured__excerpt {
+  margin-top: var(--space-5);
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  max-width: 50ch;
+  opacity: 0.85;
+}
+
+.home-featured__body .link-arrow {
+  margin-top: var(--space-8);
+  display: inline-flex;
+}
+
+/* ── JOURNAL PREVIEW ─────────────────────────────── */
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+/* ── AIRPORTS ────────────────────────────────────── */
+
+.home-airports {
+  color: var(--beige);
+}
+
+.home-airports .section-header__title {
+  color: var(--beige);
+}
+
+.home-airports .section-label .eyebrow {
+  color: var(--beige);
+}
+
+.home-airports .section-label::before {
+  background: var(--beige);
+}
+
+.home-airports__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.home-airports .entity-card__code {
+  background: var(--beige);
+  color: var(--ink);
+}
+
+/* ── AIRLINES ────────────────────────────────────── */
+
+.home-airlines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.home-airline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  transition: padding var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+.home-airline:hover {
+  padding-left: var(--space-8);
+  background: var(--paper);
+}
+
+.home-airline__index {
+  color: var(--grey);
+}
+
+.home-airline__name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+}
+
+.home-airline__code {
+  margin-left: auto;
+  color: var(--grey);
+}
+
+/* ── AIRCRAFT ────────────────────────────────────── */
+
+.home-aircraft {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.home-aircraft__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-aircraft__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.home-aircraft__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-aircraft__name {
+  margin-top: var(--space-4);
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+}
+
+.home-aircraft__meta {
+  margin-top: var(--space-2);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── ROUTES CTA ──────────────────────────────────── */
+
+.routes-cta__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4) var(--space-8);
+  align-items: end;
+}
+
+.routes-cta__inner > .eyebrow {
+  color: var(--terracotta);
+  grid-column: 1;
+  align-self: center;
+}
+
+.routes-cta__title {
+  grid-column: 2;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  max-width: 16ch;
+}
+
+.routes-cta__text {
+  grid-column: 2;
+  max-width: 52ch;
+  color: var(--grey);
+}
+
+.routes-cta__inner .btn {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: var(--space-4);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+
+@media (max-width: 1000px) {
+  .glance__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-airports__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-aircraft {
+    grid-template-columns: 1fr;
+  }
+
+  .home-airlines {
+    grid-template-columns: 1fr;
+  }
+
+  .routes-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .routes-cta__title,
+  .routes-cta__text,
+  .routes-cta__inner .btn,
+  .routes-cta__inner > .eyebrow {
+    grid-column: 1;
+  }
+}

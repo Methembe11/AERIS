@@ -1,0 +1,110 @@
+.development-intro {
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 62ch;
+  margin-bottom: var(--space-14);
+}
+
+.development-modules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.development-module {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid var(--ink);
+  padding-top: var(--space-5);
+}
+
+.development-module--link {
+  transition: padding-left var(--duration-fast) var(--ease-out);
+}
+
+.development-module--link:hover {
+  padding-left: var(--space-3);
+}
+
+.development-module__status {
+  color: var(--grey);
+}
+
+.development-module__status--completed,
+.development-module__status--live {
+  color: var(--ink);
+}
+
+.development-module__status--in-progress,
+.development-module__status--next {
+  color: var(--terracotta);
+}
+
+.development-module__name {
+  font-size: var(--fs-title);
+  font-weight: 400;
+  margin-top: var(--space-3);
+}
+
+.development-module--link:hover .development-module__name {
+  color: var(--terracotta);
+}
+
+.development-module__text {
+  margin-top: var(--space-3);
+  color: var(--ink);
+  line-height: 1.6;
+  max-width: 50ch;
+}
+
+.development-module__meta {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  color: var(--grey);
+  font-size: var(--fs-small);
+}
+
+.development-roadmap {
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.development-roadmap > .eyebrow {
+  display: block;
+  margin-bottom: var(--space-8);
+}
+
+.development-roadmap .development-modules {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.development-cta {
+  margin-top: var(--space-16);
+  padding: var(--space-10);
+  background: var(--ink);
+  color: var(--beige);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.development-cta__text {
+  max-width: 48ch;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .development-roadmap .development-modules {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .development-modules {
+    grid-template-columns: 1fr;
+  }
+}

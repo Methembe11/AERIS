@@ -1,0 +1,150 @@
+.routes-filters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.routes-filters__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.routes-filters__group .eyebrow {
+  color: var(--grey);
+}
+
+.routes-filters__select {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  padding: var(--space-1) 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.routes-filters__status {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.routes-filters__btn {
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  padding: var(--space-2) 0;
+  color: var(--grey);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.routes-filters__btn--active {
+  color: var(--terracotta);
+}
+
+.routes-group {
+  margin-bottom: var(--space-12);
+}
+
+.routes-group__label {
+  color: var(--grey);
+  display: block;
+  margin-bottom: var(--space-5);
+}
+
+.routes-group__list {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.route-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 120px;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  transition: padding var(--duration-fast) var(--ease-out);
+}
+
+.route-row:hover {
+  padding-left: var(--space-3);
+}
+
+.route-row__pair {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.route-row:hover .route-row__pair {
+  color: var(--terracotta);
+}
+
+.route-row__cities {
+  color: var(--ink);
+  font-size: var(--fs-small);
+  font-weight: 400;
+}
+
+.route-row__airline {
+  color: var(--grey);
+}
+
+.route-row__status {
+  justify-self: end;
+}
+
+.route-row__status--active {
+  color: var(--sage-dark);
+}
+
+.route-row__status--seasonal {
+  color: var(--terracotta);
+}
+
+.route-row__status--suspended {
+  color: var(--grey);
+}
+
+.routes-empty {
+  color: var(--grey);
+  padding: var(--space-10) 0;
+}
+
+@media (max-width: 760px) {
+  .route-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'pair status'
+      'cities status'
+      'airline airline';
+    row-gap: var(--space-1);
+  }
+
+  .route-row__pair {
+    grid-area: pair;
+  }
+
+  .route-row__cities {
+    grid-area: cities;
+  }
+
+  .route-row__airline {
+    grid-area: airline;
+    margin-top: var(--space-2);
+  }
+
+  .route-row__status {
+    grid-area: status;
+    align-self: center;
+  }
+}

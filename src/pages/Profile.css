@@ -1,0 +1,325 @@
+/* ── Profile hero ─────────────────────────────────── */
+
+.profile-hero {
+  position: relative;
+  height: min(64vh, 640px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.profile-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.4) 0%,
+    rgba(20, 20, 20, 0.15) 40%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+}
+
+.profile-hero__content {
+  position: relative;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: calc(var(--header-h) + var(--space-8));
+}
+
+.profile-hero__eyebrow {
+  color: var(--terracotta);
+}
+
+.profile-hero__title {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  max-width: 18ch;
+  margin-top: var(--space-3);
+}
+
+.profile-hero__meta {
+  display: block;
+  margin-top: var(--space-5);
+  color: var(--beige);
+  opacity: 0.85;
+}
+
+/* ── Tabs ─────────────────────────────────────────── */
+
+.profile-tabs {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 50;
+  background: var(--ink);
+  color: var(--beige);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.profile-tabs__inner {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+}
+
+.profile-tabs__btn {
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  padding: var(--space-4) 0;
+  color: var(--grey);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.profile-tabs__btn--active {
+  color: var(--beige);
+  border-bottom-color: var(--terracotta);
+}
+
+/* ── Overview ─────────────────────────────────────── */
+
+.profile-overview {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--space-14);
+}
+
+.profile-facts {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-fact {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+}
+
+.profile-fact__label {
+  display: block;
+  color: var(--grey);
+  margin-bottom: var(--space-2);
+}
+
+.profile-fact__value {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.profile-narrative p {
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.profile-narrative__zw {
+  border-left: 2px solid var(--terracotta);
+  padding-left: var(--space-5);
+}
+
+/* ── Network ──────────────────────────────────────── */
+
+.profile-network__count {
+  display: block;
+  color: var(--grey);
+  margin-bottom: var(--space-6);
+}
+
+.profile-route-list {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.profile-route {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  transition: padding var(--duration-fast) var(--ease-out);
+}
+
+.profile-route:hover {
+  padding-left: var(--space-3);
+}
+
+.profile-route__pair {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.profile-route:hover .profile-route__pair {
+  color: var(--terracotta);
+}
+
+.profile-route__meta {
+  color: var(--grey);
+  white-space: nowrap;
+}
+
+/* ── Fleet ────────────────────────────────────────── */
+
+.profile-fleet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.profile-fleet__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.profile-fleet__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-fleet__info {
+  padding-top: var(--space-3);
+}
+
+.profile-fleet__name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  display: block;
+}
+
+.profile-fleet__meta {
+  color: var(--grey);
+}
+
+/* ── Zimbabwe ─────────────────────────────────────── */
+
+.profile-zimbabwe__narrative {
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  line-height: 1.7;
+  border-left: 2px solid var(--terracotta);
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+.profile-zimbabwe__airports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.profile-chip {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  border: 1px solid rgba(20, 20, 20, 0.25);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.profile-chip:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.profile-chip .eyebrow {
+  color: var(--grey);
+}
+
+/* ── Reports ──────────────────────────────────────── */
+
+.profile-report-list {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.profile-report {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+  transition: padding-left var(--duration-fast) var(--ease-out);
+}
+
+.profile-report:hover {
+  padding-left: var(--space-3);
+}
+
+.profile-report__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.profile-report__kicker {
+  color: var(--grey);
+}
+
+.profile-report__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.profile-report:hover .profile-report__title {
+  color: var(--terracotta);
+}
+
+.profile-report__meta {
+  color: var(--grey);
+  font-size: var(--fs-small);
+}
+
+.profile-report__date {
+  color: var(--grey);
+  white-space: nowrap;
+}
+
+/* ── Latest ───────────────────────────────────────── */
+
+.profile-empty {
+  color: var(--grey);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .profile-overview {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .profile-fleet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-route {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 560px) {
+  .profile-fleet {
+    grid-template-columns: 1fr;
+  }
+}

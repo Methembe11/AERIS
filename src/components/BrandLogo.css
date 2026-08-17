@@ -1,0 +1,13 @@
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brand-logo--header {
+  width: 8.5rem;
+}
+
+.brand-logo--footer {
+  width: 11rem;
+}

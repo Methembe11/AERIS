@@ -1,0 +1,14 @@
+.section-header {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+}
+
+.section-header__title {
+  font-size: var(--fs-title-xl);
+  max-width: 30ch;
+}
+
+.section-header__cta {
+  margin-left: auto;
+}
